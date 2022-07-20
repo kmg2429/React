@@ -42,7 +42,10 @@ function App() {
   };
 
   const handleBetChange = (e) => {
-    const num = Number(e.target.value);
+    let num = Number(e.target.value);
+    if (num > 9) num %= 10;
+    if (num < 1) num = 1;
+    num = Math.floor(num);
     setBet(num);
   };
 
@@ -57,7 +60,6 @@ function App() {
         VS
         <HandIcon value={otherHand} />
       </div>
-      <p>승부 기록: {gameHistory.join(', ')}</p>
       <div>
         <input type="number" value={bet} min={1} max={9} onChange={handleBetChange}></input>
       </div>
