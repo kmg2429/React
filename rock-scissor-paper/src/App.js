@@ -29,7 +29,7 @@ function App() {
     setOtherHand(nextOtherHand);
     setGameHistory([...gameHistory, nextHistoryItem]);
     if (comparison > 0) setScore(score + bet);
-    if (comparison < 0) setOtherScore(otherScore + bet);
+    if (comparison < 0) setOtherScore(score + bet);
   };
 
   const handleClearClick = () => {
